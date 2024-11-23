@@ -17,7 +17,7 @@ import java.util.List;
 @Table(name = "log")
 public class LogServiceEntity {
     @Id
-    private String logCode;
+    private String logId;
     private Date logDate;
     private String observation;
     private String observedImage;

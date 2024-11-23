@@ -18,11 +18,11 @@ import java.util.List;
 @Table(name = "staff")
 public class StaffEntity {
     @Id
-    private String id;
+    private String staffId;
     private String firstName;
     private String lastName;
     private String designation;
-    private Enum gender;
+    private Gender gender;
     private Date joinedDate;
     private Date dateOfBirth;
     private String addressLine1;
@@ -32,9 +32,16 @@ public class StaffEntity {
     private String addressLine5;
     private String contactNo;
     private String email;
-    private Enum role;
+    private Role role;
     @OneToMany
     private List<FieldEntity> fields;
     @OneToMany
     private List<VehicleEntity> vehicles;
+
+    public enum Gender {
+        MALE, FEMALE, OTHER;
+    }
+    public enum Role{
+        MANAGER, ADMINISTRATIVE, SCIENTIST, OTHER;
+    }
 }

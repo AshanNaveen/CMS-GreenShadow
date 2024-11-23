@@ -14,7 +14,7 @@ import jakarta.persistence.Table;
 @Table(name = "vehicle")
 public class VehicleEntity {
     @Id
-    private String vehicleCode;
+    private String vehicleId;
     private String licensePlate;
     private String category;
     private String fuelType;

@@ -17,5 +17,9 @@ public class UserEntity {
     @Column(unique = true, nullable = false)
     private String email;
     private String password;
-    private Enum role;
+    private Role role;
+
+    public enum Role{
+        MANAGER, ADMINISTRATIVE, SCIENTIST, OTHER;
+    }
 }

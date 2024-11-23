@@ -11,7 +11,7 @@ import jakarta.persistence.*;
 @Table(name = "crop")
 public class CropEntity {
     @Id
-    private String cropCode;
+    private String cropId;
     private String commonName;
     private String scientificName;
     @Column(columnDefinition = "LONGTEXT")

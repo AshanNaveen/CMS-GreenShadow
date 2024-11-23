@@ -14,14 +14,14 @@ import java.util.List;
 @Table(name="field")
 public class FieldEntity {
     @Id
-    private String fieldCode;
+    private String fieldId;
     private String fieldName;
     private Point location;
     private Double size;
     @OneToMany
-    private List<CropEntity> Crops;
+    private List<CropEntity> cropEntitiesrops;
     @OneToMany
-    private List<StaffEntity> Staff;
+    private List<StaffEntity> staffEntities;
     @Column(columnDefinition = "LONGTEXT")
     private String image1;
     @Column(columnDefinition = "LONGTEXT")

@@ -14,12 +14,14 @@ import jakarta.persistence.Table;
 @Table(name = "equipment")
 public class EquipmentEntity {
     @Id
-    private String EquipmentId;
-    private String Name;
-    private Enum Type;
+    private String euqipmentId;
+    private String name;
+    private Enum type;
     private Enum Status;
     @OneToOne
-    private StaffEntity AssignedStaff;
+    private StaffEntity assignedStaff;
     @OneToOne
-    private FieldEntity AssignedField;
+    private FieldEntity assignedField;
 }
+
+

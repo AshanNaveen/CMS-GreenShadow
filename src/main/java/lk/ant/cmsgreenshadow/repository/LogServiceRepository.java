@@ -1,6 +1,5 @@
 package lk.ant.cmsgreenshadow.repository;
-
-import lk.ant.cmsgreenshadow.entity.LogServiceEntity;
+import lk.ant.cmsgreenshadow.entity.LogEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
@@ -8,5 +7,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @date 11/21/2024
  * @project CMSGreenShadow
  */
-public interface LogServiceRepository extends JpaRepository<LogServiceEntity,String> {
+public interface LogServiceRepository extends JpaRepository<LogEntity,String> {
 }

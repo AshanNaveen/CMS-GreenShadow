@@ -3,6 +3,7 @@ package lk.ant.cmsgreenshadow.entity;
 import jakarta.persistence.*;
 import org.springframework.data.geo.Point;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -18,12 +19,16 @@ public class FieldEntity {
     private String fieldName;
     private Point location;
     private Double size;
-    @OneToMany
-    private List<CropEntity> cropEntitiesrops;
-    @OneToMany
-    private List<StaffEntity> staffEntities;
     @Column(columnDefinition = "LONGTEXT")
     private String image1;
     @Column(columnDefinition = "LONGTEXT")
     private String image2;
+    @OneToMany(mappedBy = "field", cascade = CascadeType.ALL)
+    private List<EquipmentEntity> equipment;
+    @OneToMany(mappedBy = "field", cascade = CascadeType.ALL)
+    private List<LogEntity> logs;
+    @OneToMany(mappedBy = "field", cascade = CascadeType.ALL)
+    private List<FieldCropEntity> fieldCrops = new ArrayList<>();
+    @OneToMany(mappedBy = "field", cascade = CascadeType.ALL)
+    private List<FieldStaffEntity> fieldStaffs = new ArrayList<>();
 }

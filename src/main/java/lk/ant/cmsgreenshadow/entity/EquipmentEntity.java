@@ -1,9 +1,6 @@
 package lk.ant.cmsgreenshadow.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 /**
  * @author Naveen Theekshana
@@ -16,12 +13,14 @@ public class EquipmentEntity {
     @Id
     private String euqipmentId;
     private String name;
-    private Enum type;
-    private Enum Status;
-    @OneToOne
-    private StaffEntity assignedStaff;
-    @OneToOne
-    private FieldEntity assignedField;
+    private String type;
+    private String Status;
+    @ManyToOne
+    @JoinColumn(name = "field_id")
+    private FieldEntity field;
+    @ManyToOne
+    @JoinColumn(name = "staff_id")
+    private StaffEntity staff;
 }
 
 

@@ -1,12 +1,10 @@
 package lk.ant.cmsgreenshadow.entity;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -22,6 +20,7 @@ public class StaffEntity {
     private String firstName;
     private String lastName;
     private String designation;
+    @Enumerated(EnumType.STRING)
     private Gender gender;
     private Date joinedDate;
     private Date dateOfBirth;
@@ -32,11 +31,18 @@ public class StaffEntity {
     private String addressLine5;
     private String contactNo;
     private String email;
+    @Enumerated(EnumType.STRING)
     private Role role;
-    @OneToMany
-    private List<FieldEntity> fields;
-    @OneToMany
-    private List<VehicleEntity> vehicles;
+    @OneToMany(mappedBy = "staff", cascade = CascadeType.ALL)
+    private List<EquipmentEntity> equipment;
+    @ManyToOne
+    @JoinColumn(name = "vehicle_id")
+    private VehicleEntity vehicleId;
+    @OneToMany(mappedBy = "staff", cascade = CascadeType.ALL)
+    private List<FieldStaffEntity> fieldStaff = new ArrayList<>();
+    @OneToMany(mappedBy = "staffEntity", cascade = CascadeType.ALL)
+    private List<StaffLogEntity> staffLog = new ArrayList<>();
+
 
     public enum Gender {
         MALE, FEMALE, OTHER;

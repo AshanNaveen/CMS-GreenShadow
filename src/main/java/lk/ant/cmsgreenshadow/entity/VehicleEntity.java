@@ -1,9 +1,8 @@
 package lk.ant.cmsgreenshadow.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 /**
  * @author Naveen Theekshana
@@ -19,7 +18,7 @@ public class VehicleEntity {
     private String category;
     private String fuelType;
     private String status;
-    @OneToOne
-    private StaffEntity assignedStaff;
     private String remarks;
+    @OneToMany(mappedBy = "vehicleId", cascade = CascadeType.ALL)
+    private List<StaffEntity> staff;
 }

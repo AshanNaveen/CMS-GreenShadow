@@ -2,6 +2,9 @@ package lk.ant.cmsgreenshadow.entity;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author Naveen Theekshana
  * @date 10/29/2024
@@ -18,6 +21,8 @@ public class CropEntity {
     private String cropImage;
     private String category;
     private String season;
-    @ManyToOne
-    private FieldEntity field;
+    @OneToMany(mappedBy = "crop", cascade = CascadeType.ALL)
+    private List<LogEntity> logs;
+    @OneToMany(mappedBy = "crop", cascade = CascadeType.ALL)
+    private List<FieldCropEntity> fieldCrops = new ArrayList<>();
 }

@@ -1,9 +1,6 @@
 package lk.ant.cmsgreenshadow.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 /**
  * @author Naveen Theekshana
@@ -17,6 +14,7 @@ public class UserEntity {
     @Column(unique = true, nullable = false)
     private String email;
     private String password;
+    @Enumerated(EnumType.STRING)
     private Role role;
 
     public enum Role{

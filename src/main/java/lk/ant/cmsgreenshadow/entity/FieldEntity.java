@@ -1,6 +1,9 @@
 package lk.ant.cmsgreenshadow.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.geo.Point;
 
 import java.util.ArrayList;
@@ -13,6 +16,9 @@ import java.util.List;
  */
 @Entity
 @Table(name="field")
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class FieldEntity {
     @Id
     private String fieldId;

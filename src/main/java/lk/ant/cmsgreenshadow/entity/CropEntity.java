@@ -1,6 +1,9 @@
 package lk.ant.cmsgreenshadow.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,6 +15,9 @@ import java.util.List;
  */
 @Entity
 @Table(name = "crop")
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class CropEntity {
     @Id
     private String cropId;

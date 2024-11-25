@@ -1,6 +1,9 @@
 package lk.ant.cmsgreenshadow.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * @author Naveen Theekshana
@@ -9,6 +12,9 @@ import jakarta.persistence.*;
  */
 @Entity
 @Table(name = "equipment")
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class EquipmentEntity {
     @Id
     private String euqipmentId;

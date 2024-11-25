@@ -8,11 +8,12 @@ import lombok.NoArgsConstructor;
 import java.io.Serializable;
 import java.sql.Date;
 
-@AllArgsConstructor
-@NoArgsConstructor
-@Data
-@Table(name = "field_crop")
+
 @Entity
+@Table(name = "field_crop")
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class FieldCropEntity implements Serializable {
     @Id
     private String fieldCropId;

@@ -7,11 +7,11 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
-@AllArgsConstructor
-@NoArgsConstructor
-@Data
-@Table(name = "staff_log")
 @Entity
+@Table(name = "staff_log")
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class StaffLogEntity implements Serializable {
     @Id
     private String staffLogId;

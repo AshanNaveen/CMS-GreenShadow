@@ -9,11 +9,11 @@ import lombok.ToString;
 import java.io.Serializable;
 import java.time.LocalDate;
 
-@AllArgsConstructor
-@NoArgsConstructor
-@Data
-@Table(name = "field_staff")
 @Entity
+@Table(name = "field_staff")
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class FieldStaffEntity implements Serializable {
     @Id
     private String fieldStaffId;

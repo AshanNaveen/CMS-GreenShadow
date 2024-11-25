@@ -2,6 +2,9 @@ package lk.ant.cmsgreenshadow.entity;
 
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.sql.Date;
 import java.util.ArrayList;
@@ -14,6 +17,9 @@ import java.util.List;
  */
 @Entity
 @Table(name = "staff")
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class StaffEntity {
     @Id
     private String staffId;

@@ -158,4 +158,63 @@ public class MappingUtil {
     }
 
     //*****************
+    // **** Field_Crop Entity - Field_Crop Dto
+
+    public FieldCropDto toFieldCropDto(FieldCropEntity entity) {
+        return modelMapper.map(entity, FieldCropDto.class);
+    }
+
+    public FieldCropEntity toFieldCropEntity(FieldCropDto dto) {
+        return modelMapper.map(dto, FieldCropEntity.class);
+    }
+
+    public List<FieldCropDto> toFieldCropDtoList(List<FieldCropEntity> entityList) {
+        return modelMapper.map(entityList, new TypeToken<List<FieldCropDto>>(){}.getType());
+    }
+
+    public List<FieldCropEntity> toFieldCropEntityList(List<FieldCropDto> dtoList) {
+        return modelMapper.map(dtoList,new TypeToken<List<FieldCropEntity>>(){}.getType());
+    }
+
+    //*****************
+
+    // **** Field_Crop Entity - Field_Crop Dto
+
+    public FieldStaffDto toFieldStaffDto(FieldStaffEntity entity) {
+        return modelMapper.map(entity, FieldStaffDto.class);
+    }
+
+    public FieldStaffEntity toFieldStaffEntity(FieldStaffDto dto) {
+        return modelMapper.map(dto, FieldStaffEntity.class);
+    }
+
+    public List<FieldStaffDto> toFieldStaffDtoList(List<FieldStaffEntity> entityList) {
+        return modelMapper.map(entityList, new TypeToken<List<FieldStaffDto>>(){}.getType());
+    }
+
+    public List<FieldStaffEntity> toFieldStaffEntityList(List<FieldStaffDto> dtoList) {
+        return modelMapper.map(dtoList,new TypeToken<List<FieldStaffEntity>>(){}.getType());
+    }
+
+    //*****************
+
+    // **** Field_Crop Entity - Field_Crop Dto
+
+    public StaffLogDto toStaffLogDto(StaffLogEntity entity) {
+        return modelMapper.map(entity, StaffLogDto.class);
+    }
+
+    public StaffLogEntity toStaffLogEntity(StaffLogDto dto) {
+        return modelMapper.map(dto, StaffLogEntity.class);
+    }
+
+    public List<StaffLogDto> toStaffLogDtoList(List<StaffLogEntity> entityList) {
+        return modelMapper.map(entityList, new TypeToken<List<StaffLogDto>>(){}.getType());
+    }
+
+    public List<StaffLogEntity> toStaffLogEntity(List<StaffLogDto> dtoList) {
+        return modelMapper.map(dtoList,new TypeToken<List<StaffLogEntity>>(){}.getType());
+    }
+
+    //*****************
 }

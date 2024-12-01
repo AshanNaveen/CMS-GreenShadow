@@ -46,14 +46,14 @@ public class StaffEntity {
     private VehicleEntity vehicleId;
     @OneToMany(mappedBy = "staff", cascade = CascadeType.ALL)
     private List<FieldStaffEntity> fieldStaff = new ArrayList<>();
-    @OneToMany(mappedBy = "staffEntity", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "staff", cascade = CascadeType.ALL)
     private List<StaffLogEntity> staffLog = new ArrayList<>();
 
 
     public enum Gender {
-        MALE, FEMALE, OTHER;
+        MALE, FEMALE, OTHER
     }
     public enum Role{
-        MANAGER, ADMINISTRATIVE, SCIENTIST, OTHER;
+        MANAGER, ADMINISTRATIVE, SCIENTIST, OTHER
     }
 }

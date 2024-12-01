@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import java.io.Serializable;
-import java.time.LocalDate;
+import java.sql.Date;
 
 @Entity
 @Table(name = "field_staff")
@@ -25,5 +25,5 @@ public class FieldStaffEntity implements Serializable {
     @JoinColumn(name = "staff_id")
     private StaffEntity staff;
     @Column(name = "assigned_date", nullable = false)
-    private LocalDate assignedDate;
+    private Date assignedDate;
 }

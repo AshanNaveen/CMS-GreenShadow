@@ -20,7 +20,7 @@ public class EquipmentEntity {
     private String euqipmentId;
     private String name;
     private String type;
-    private String Status;
+    private String status;
     @ManyToOne
     @JoinColumn(name = "field_id")
     private FieldEntity field;

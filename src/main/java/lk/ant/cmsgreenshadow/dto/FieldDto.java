@@ -1,5 +1,8 @@
 package lk.ant.cmsgreenshadow.dto;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.geo.Point;
 
 import java.util.List;
@@ -9,6 +12,9 @@ import java.util.List;
  * @date 11/23/2024
  * @project CMSGreenShadow
  */
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class FieldDto {
     private String fieldCode;
     private String fieldName;

@@ -1,11 +1,20 @@
 package lk.ant.cmsgreenshadow.dto;
 
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.util.List;
+
 /**
  * @author Naveen Theekshana
  * @date 11/23/2024
  * @project CMSGreenShadow
  */
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class CropDto {
     private String cropCode;
     private String commonName;
@@ -13,5 +22,5 @@ public class CropDto {
     private String cropImage;
     private String category;
     private String season;
-    private String fieldId;
+    private List<String> fieldIds;
 }

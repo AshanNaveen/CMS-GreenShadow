@@ -1,9 +1,11 @@
 package lk.ant.cmsgreenshadow.dto;
 
+import lk.ant.cmsgreenshadow.customResponse.Response;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
 import java.sql.Date;
 
 /**
@@ -14,7 +16,7 @@ import java.sql.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class FieldCropDto {
+public class FieldCropDto implements Serializable, Response {
     private String fieldCropId;
     private String field;
     private String crop;

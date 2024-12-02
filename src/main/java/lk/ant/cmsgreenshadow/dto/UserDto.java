@@ -1,9 +1,12 @@
 package lk.ant.cmsgreenshadow.dto;
 
 
+import lk.ant.cmsgreenshadow.customResponse.Response;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.io.Serializable;
 
 /**
  * @author Naveen Theekshana
@@ -13,7 +16,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserDto {
+public class UserDto implements Serializable, Response {
     private String email;
     private String password;
     private Role role;

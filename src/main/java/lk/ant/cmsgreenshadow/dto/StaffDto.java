@@ -1,10 +1,12 @@
 package lk.ant.cmsgreenshadow.dto;
 
 
+import lk.ant.cmsgreenshadow.customResponse.Response;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
 import java.sql.Date;
 import java.util.List;
 
@@ -16,7 +18,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class StaffDto {
+public class StaffDto implements Serializable, Response {
     private String staffId;
     private String firstName;
     private String lastName;

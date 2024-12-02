@@ -1,10 +1,12 @@
 package lk.ant.cmsgreenshadow.dto;
 
+import lk.ant.cmsgreenshadow.customResponse.Response;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.geo.Point;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -15,7 +17,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class FieldDto {
+public class FieldDto implements Serializable, Response {
     private String fieldCode;
     private String fieldName;
     private Point location;

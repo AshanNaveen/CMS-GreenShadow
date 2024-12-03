@@ -22,8 +22,8 @@ public class FieldDto implements Serializable, Response {
     private String fieldName;
     private Point location;
     private Double size;
-    private List crops;
-    private List staff;
+    private List<String> crops;
+    private List<String> staff;
     private String image1;
     private String image2;
 }

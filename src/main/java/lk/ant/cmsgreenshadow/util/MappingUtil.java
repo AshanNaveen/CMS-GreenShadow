@@ -61,20 +61,20 @@ public class MappingUtil {
 
     // **** Field Entity - Field Dto
 
-    public FieldDto toFieldDto(EquipmentEntity entity) {
+    public FieldDto toFieldDto(FieldEntity entity) {
         return modelMapper.map(entity, FieldDto.class);
     }
 
-    public EquipmentEntity toEquipmentEntity(FieldDto dto) {
-        return modelMapper.map(dto, EquipmentEntity.class);
+    public FieldEntity toFieldEntity(FieldDto dto) {
+        return modelMapper.map(dto, FieldEntity.class);
     }
 
-    public List<FieldDto> toFieldDtoList(List<EquipmentEntity> entityList) {
+    public List<FieldDto> toFieldDtoList(List<FieldEntity> entityList) {
         return modelMapper.map(entityList, new TypeToken<List<FieldDto>>(){}.getType());
     }
 
-    public List<FieldDto> toFieldEntityList(List<FieldDto> dtoList) {
-        return modelMapper.map(dtoList,new TypeToken<List<EquipmentEntity>>(){}.getType());
+    public List<FieldEntity> toFieldEntityList(List<FieldDto> dtoList) {
+        return modelMapper.map(dtoList,new TypeToken<List<FieldEntity>>(){}.getType());
     }
 
     //*****************

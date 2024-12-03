@@ -24,7 +24,7 @@ public class LogDto implements Serializable, Response {
     private Date logDate;
     private String observation;
     private String observedImage;
-    private List fields;
-    private List crops;
-    private List staff;
+    private String field;
+    private String crop;
+    private List<String> staff;
 }

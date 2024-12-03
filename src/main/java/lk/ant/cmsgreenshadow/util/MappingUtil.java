@@ -85,7 +85,7 @@ public class MappingUtil {
         return modelMapper.map(entity, LogDto.class);
     }
 
-    public LogEntity toEquipmentEntity(LogDto dto) {
+    public LogEntity toLogEntity(LogDto dto) {
         return modelMapper.map(dto, LogEntity.class);
     }
 

@@ -89,9 +89,18 @@
 			<scope>test</scope>
 		</dependency>
 
+
+		<!-- Lombok Platform -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
+		</dependency>
+
+		<!-- Jakarta Validation API-->
+		<dependency>
+			<groupId>jakarta.validation</groupId>
+			<artifactId>jakarta.validation-api</artifactId>
+			<version>3.0.2</version>
 		</dependency>
 
 	</dependencies>

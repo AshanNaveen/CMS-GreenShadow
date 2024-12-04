@@ -1,6 +1,7 @@
 package lk.ant.cmsgreenshadow.entity;
 
 import jakarta.persistence.*;
+import lk.ant.cmsgreenshadow.entity.enums.Role;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,8 +23,4 @@ public class UserEntity {
     private String password;
     @Enumerated(EnumType.STRING)
     private Role role;
-
-    public enum Role{
-        MANAGER, ADMINISTRATIVE, SCIENTIST, OTHER;
-    }
 }

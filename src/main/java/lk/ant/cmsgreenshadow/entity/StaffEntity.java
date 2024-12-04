@@ -2,6 +2,8 @@ package lk.ant.cmsgreenshadow.entity;
 
 
 import jakarta.persistence.*;
+import lk.ant.cmsgreenshadow.entity.enums.Gender;
+import lk.ant.cmsgreenshadow.entity.enums.Role;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -48,12 +50,4 @@ public class StaffEntity {
     private List<FieldStaffEntity> fieldStaff = new ArrayList<>();
     @OneToMany(mappedBy = "staff", cascade = CascadeType.ALL)
     private List<StaffLogEntity> staffLog = new ArrayList<>();
-
-
-    public enum Gender {
-        MALE, FEMALE, OTHER
-    }
-    public enum Role{
-        MANAGER, ADMINISTRATIVE, SCIENTIST, OTHER
-    }
 }

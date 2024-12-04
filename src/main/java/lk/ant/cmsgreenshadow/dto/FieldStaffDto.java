@@ -1,5 +1,6 @@
 package lk.ant.cmsgreenshadow.dto;
 
+import jakarta.validation.constraints.NotEmpty;
 import lk.ant.cmsgreenshadow.customResponse.Response;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -18,7 +19,9 @@ import java.sql.Date;
 @Data
 public class FieldStaffDto implements Serializable, Response {
     private String fieldStaffId;
+    @NotEmpty(message = "Field ID cannot be empty")
     private String field;
+    @NotEmpty(message = "Staff ID cannot be empty")
     private String staffId;
     private Date assignedDate;
 }

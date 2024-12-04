@@ -62,6 +62,18 @@ public class UserServiceIMPL implements UserService {
         return false;
     }
 
+    @Override
+    public UserDto getUser(String email) {
+        Optional<UserEntity> user = userRepository.findByEmail(email);
+        if (user.isPresent()){
+            UserDto userDto = mappingUtil.toUserDto(user.get());
+            System.out.println("User returned successfully: " + userDto);
+            return userDto;
+        } else {
+            throw new NotFoundException("User not found with email: " + email);
+        }
+    }
+
     private StaffEntity.Role getUserRole(String email) {
         return staffRepository.findByEmail(email)
                 .map(StaffEntity::getRole)

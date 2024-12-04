@@ -1,5 +1,6 @@
 package lk.ant.cmsgreenshadow.controller;
 
+import jakarta.validation.Valid;
 import lk.ant.cmsgreenshadow.customResponse.ErrorResponse;
 import lk.ant.cmsgreenshadow.customResponse.Response;
 import lk.ant.cmsgreenshadow.dto.StaffDto;
@@ -31,7 +32,7 @@ public class StaffController {
     private static final Logger logger = Logger.getLogger(LogController.class.getName());
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Void> saveStaff( @RequestBody StaffDto staff) {
+    public ResponseEntity<Void> saveStaff(@Valid @RequestBody StaffDto staff) {
         if (staff != null) {
             try {
                 staffService.saveStaff(staff);
@@ -49,7 +50,7 @@ public class StaffController {
     }
 
     @PatchMapping(value = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<String> updateStaff( @PathVariable("id") String id, @RequestBody StaffDto staff) {
+    public ResponseEntity<String> updateStaff(@Valid @PathVariable("id") String id, @RequestBody StaffDto staff) {
         if (id != null && staff != null) {
             try {
                 staffService.updateStaff(id, staff);

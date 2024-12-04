@@ -1,5 +1,6 @@
 package lk.ant.cmsgreenshadow.controller;
 
+import jakarta.validation.Valid;
 import lk.ant.cmsgreenshadow.dto.UserDto;
 import lk.ant.cmsgreenshadow.exception.DataPersistFailedException;
 import lk.ant.cmsgreenshadow.exception.NotFoundException;
@@ -28,7 +29,7 @@ public class UserController {
     private static final Logger logger = Logger.getLogger(UserController.class.getName());
 
     @PatchMapping(value = "/{email}", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<String> updateUser(@PathVariable("email") String email, @RequestBody UserDto user) {
+    public ResponseEntity<String> updateUser(@Valid @PathVariable("email") String email, @RequestBody UserDto user) {
         if (email != null && user != null) {
             try {
                 user.setPassword(user.getPassword());

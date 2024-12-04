@@ -1,5 +1,6 @@
 package lk.ant.cmsgreenshadow.controller;
 
+import jakarta.validation.Valid;
 import lk.ant.cmsgreenshadow.customResponse.ErrorResponse;
 import lk.ant.cmsgreenshadow.customResponse.Response;
 import lk.ant.cmsgreenshadow.dto.EquipmentDto;
@@ -31,7 +32,7 @@ public class EquipmentController {
     private static final Logger logger = Logger.getLogger(EquipmentController.class.getName());
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Void> saveEquipment(@RequestBody EquipmentDto equipment) {
+    public ResponseEntity<Void> saveEquipment(@Valid @RequestBody EquipmentDto equipment) {
         if (equipment != null) {
             try {
                 equipmentService.saveEquipment(equipment);
@@ -50,7 +51,7 @@ public class EquipmentController {
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @PatchMapping(value = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<String> updateEquipment(@PathVariable("id") String id, @RequestBody EquipmentDto equipment) {
+    public ResponseEntity<String> updateEquipment(@Valid @PathVariable("id") String id, @RequestBody EquipmentDto equipment) {
         if (id != null && equipment != null) {
             try {
                 equipmentService.updateEquipment(id, equipment);

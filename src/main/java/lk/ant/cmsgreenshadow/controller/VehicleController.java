@@ -1,5 +1,6 @@
 package lk.ant.cmsgreenshadow.controller;
 
+import jakarta.validation.Valid;
 import lk.ant.cmsgreenshadow.customResponse.ErrorResponse;
 import lk.ant.cmsgreenshadow.customResponse.Response;
 import lk.ant.cmsgreenshadow.dto.VehicleDto;
@@ -31,7 +32,7 @@ public class VehicleController {
     private static final Logger logger = Logger.getLogger(VehicleController.class.getName());
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Void> saveVehicle( @RequestBody VehicleDto vehicle) {
+    public ResponseEntity<Void> saveVehicle(@Valid @RequestBody VehicleDto vehicle) {
         if (vehicle != null) {
             try {
                 vehicleService.saveVehicle(vehicle);

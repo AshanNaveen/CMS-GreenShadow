@@ -2,6 +2,7 @@ package lk.ant.cmsgreenshadow.controller;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.validation.Valid;
 import lk.ant.cmsgreenshadow.customResponse.ErrorResponse;
 import lk.ant.cmsgreenshadow.customResponse.Response;
 import lk.ant.cmsgreenshadow.dto.FieldDto;
@@ -38,6 +39,7 @@ public class FieldController {
 
     @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ResponseEntity<String> saveField(
+            @Valid
             @RequestPart("fieldName") String fieldName,
             @RequestPart("location") String fieldLocation,
             @RequestPart("size") String fieldSize,
@@ -74,6 +76,7 @@ public class FieldController {
 
     @PatchMapping(value = "/{id}", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ResponseEntity<String> updateField(
+            @Valid
             @PathVariable("id") String id,
             @RequestPart("fieldName") String fieldName,
             @RequestPart("location") String fieldLocation,

@@ -2,6 +2,7 @@ package lk.ant.cmsgreenshadow.controller;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.validation.Valid;
 import lk.ant.cmsgreenshadow.customResponse.ErrorResponse;
 import lk.ant.cmsgreenshadow.customResponse.Response;
 import lk.ant.cmsgreenshadow.dto.CropDto;
@@ -36,6 +37,7 @@ public class CropController {
 
     @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ResponseEntity<String> saveCrop(
+            @Valid
             @RequestPart("commonName") String commonName,
             @RequestPart("scientificName") String scientificName,
             @RequestPart("category") String category,
@@ -72,6 +74,7 @@ public class CropController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @PatchMapping(value = "/{id}", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ResponseEntity<String> updateCrop(
+            @Valid
             @PathVariable String id,
             @RequestPart("commonName") String commonName,
             @RequestPart("scientificName") String scientificName,

@@ -1,5 +1,6 @@
 package lk.ant.cmsgreenshadow.controller;
 
+import jakarta.validation.Valid;
 import lk.ant.cmsgreenshadow.customResponse.ErrorResponse;
 import lk.ant.cmsgreenshadow.customResponse.Response;
 import lk.ant.cmsgreenshadow.dto.LogDto;
@@ -33,6 +34,7 @@ public class LogController {
 
     @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ResponseEntity<String> saveLog(
+            @Valid
             @RequestPart("details") String details,
             @RequestPart("temperature") String temperature,
             @RequestPart("observedImg") MultipartFile observedImg,
@@ -62,6 +64,7 @@ public class LogController {
 
     @PatchMapping(value = "/{id}", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ResponseEntity<String> updateLog(
+            @Valid
             @PathVariable String id,
             @RequestPart("details") String details,
             @RequestPart("temperature") String temperature,
